@@ -32,3 +32,31 @@ rick-morty-devops/
 ├── .gitignore
 └── README.md
 
+---
+
+## 🐞 Debugging & Fixes
+
+During development, the following issue was encountered and resolved:
+
+### Problem
+When running the script directly:
+
+```bash
+py scripts/export_csv.py
+ModuleNotFoundError: No module named 'app'
+### Solution
+
+The issue was caused by running the script directly, which prevented Python
+from resolving the project package structure.
+
+The fix was to run the script as a module from the project root:
+
+```bash
+py -m scripts.export_csv
+
+
+
+
+
+
+
