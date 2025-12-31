@@ -14,7 +14,7 @@ The filtered data is exported into a CSV file for further analysis or processing
 - Python 3.12
 - requests
 - Git & GitHub
-
+- VS Code
 ---
 
 ## 📁 Project Structure
