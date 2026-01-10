@@ -2,22 +2,25 @@
 
 ## 📌 Project Overview
 This project started as a **Python data exporter** that fetches characters from the public  
-**Rick and Morty API**, filters them, and exports the results to a CSV file.
+**Rick and Morty API**, applies filtering logic, and exports the results to a CSV file.
 
 The project was later **extended into a full DevOps pipeline**, including:
 - Flask web application
 - Docker containerization
-- Kubernetes deployment (Minikube)
+- Kubernetes deployment using Minikube
 - Helm chart for deployment management
+- Public exposure using ngrok
 
 ---
 
 ## 🎯 Project Goals
-- Practice Python API consumption and data processing
-- Package an application using Docker
-- Deploy the application to Kubernetes
-- Manage Kubernetes resources using Helm
-- Expose the service locally and verify functionality via browser
+- Consume and process data from a public REST API
+- Build a Flask-based web application
+- Containerize the application using Docker
+- Deploy and manage the application on Kubernetes
+- Use Helm for Kubernetes configuration management
+- Expose a local Kubernetes service to the public internet
+- Demonstrate a complete DevOps workflow from code to production-like access
 
 ---
 
@@ -28,6 +31,7 @@ The project was later **extended into a full DevOps pipeline**, including:
 - Docker
 - Kubernetes (Minikube)
 - Helm
+- ngrok
 - Git & GitHub
 - VS Code
 
