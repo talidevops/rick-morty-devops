@@ -1,62 +1,65 @@
-# Rick & Morty Characters Exporter
+# Rick & Morty DevOps Project 🚀
 
-## 📌 Project Description
-This project fetches characters from the public Rick and Morty API, filters only:
-- Human characters
-- Status: Alive
-- Origin starting with "Earth"
+## 📌 Project Overview
+This project started as a **Python data exporter** that fetches characters from the public  
+**Rick and Morty API**, filters them, and exports the results to a CSV file.
 
-The filtered data is exported into a CSV file for further analysis or processing.
+The project was later **extended into a full DevOps pipeline**, including:
+- Flask web application
+- Docker containerization
+- Kubernetes deployment (Minikube)
+- Helm chart for deployment management
+
+---
+
+## 🎯 Project Goals
+- Practice Python API consumption and data processing
+- Package an application using Docker
+- Deploy the application to Kubernetes
+- Manage Kubernetes resources using Helm
+- Expose the service locally and verify functionality via browser
 
 ---
 
 ## 🛠 Technologies Used
 - Python 3.12
+- Flask
 - requests
+- Docker
+- Kubernetes (Minikube)
+- Helm
 - Git & GitHub
 - VS Code
+
 ---
 
 ## 📁 Project Structure
 ```text
 rick-morty-devops/
 ├── app/
+│   ├── api.py              # Flask application
+│   ├── fetcher.py          # Fetches and filters characters from the API
 │   ├── __init__.py
-│   └── fetcher.py        # Fetches and filters characters from the API
-├── scripts/
-│   ├── __init__.py
-│   └── export_csv.py     # Exports the filtered data to CSV
+│   ├── templates/
+│   │   └── index.html      # Frontend page
+│   ├── static/
+│   │   ├── css/
+│   │   ├── js/
+│   │   └── giphy.gif
+│   └── Dockerfile
+│
 ├── data/
-│   └── characters.csv   # Generated output file
+│   └── characters.csv      # Generated output file
+│
+├── helm/
+│   └── rick-morty/
+│       ├── templates/
+│       │   ├── deployment.yaml
+│       │   └── service.yaml
+│       ├── values.yaml
+│       ├── Chart.yaml
+│       └── _helpers.tpl
+│
 ├── requirements.txt
 ├── .gitignore
 └── README.md
-
----
-
-## 🐞 Debugging & Fixes
-
-During development, the following issue was encountered and resolved:
-
-### Problem
-When running the script directly:
-
-```bash
-py scripts/export_csv.py
-ModuleNotFoundError: No module named 'app'
-### Solution
-
-The issue was caused by running the script directly, which prevented Python
-from resolving the project package structure.
-
-The fix was to run the script as a module from the project root:
-
-```bash
-py -m scripts.export_csv
-
-
-
-
-
-
-
