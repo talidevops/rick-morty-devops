@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Rick & Morty DevOps</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+<h1>Rick & Morty DevOps</h1>
+
+<button id="run-check-btn">Run Check</button>
+
+<!-- האנימציה מוסתרת כברירת מחדל -->
+<div id="animation" style="display: none; margin-top: 20px;">
+    <img src="{{ url_for('static', filename='giphy.gif') }}" width="300">
+</div>
+
+<p id="result"></p>
+
+<script>
+    async function runCheck() {
+        // הצגת האנימציה רק אחרי לחיצה
+        document.getElementById("animation").style.display = "block";
+
+        try {
+            const response = await fetch("/run-check");
+            const data = await response.json();
+            document.getElementById("result").innerText = data.message || "Check finished";
+        } catch (error) {
+            document.getElementById("result").innerText = "Error running check";
+        }
+    }
+
+    // חיבור הכפתור לפונקציה
+    document
+        .getElementById("run-check-btn")
+        .addEventListener("click", runCheck);
+</script>
+
+</body>
+</html>
