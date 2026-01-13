@@ -11,6 +11,43 @@ The project was later **extended into a full DevOps pipeline**, including:
 - Helm chart for deployment management
 - Public exposure using ngrok
 
+  ---
+
+## ▶️ How to Run the Project (Local Kubernetes + NGROK)
+
+The following commands were executed in **PowerShell** in order to:
+- Build the Docker image
+- Deploy the application using Helm on Minikube
+- Expose the service locally
+- Share the application publicly using NGROK
+
+```powershell
+minikube start
+
+minikube docker-env | Invoke-Expression
+
+cd C:\Users\talig\Documents\rick-morty-devops\app
+
+docker build -t rick-morty-devops:latest .
+
+docker images | findstr rick-morty
+
+cd C:\Users\talig\Documents\rick-morty-devops\helm\rick-morty
+
+helm uninstall rick-morty
+
+helm install rick-morty .
+
+kubectl get deployments
+
+kubectl get pods
+
+kubectl get svc
+
+kubectl port-forward svc/rick-morty 5000:80
+
+ngrok http 5000
+
 ---
 
 ## 🎯 Project Goals
